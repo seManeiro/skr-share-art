@@ -1,0 +1,55 @@
+textarea#note {
+    width: 100%;
+    display: block;
+    max-width: 100%;
+    line-height: 1.5;
+    padding: 15px 15px 30px;
+    border-radius: 3px;
+    font: 14px, cursive;
+    transition: box-shadow 0.5s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(withe, withe);
+    background: -o-linear-gradient(withe, withe);
+    background: -ms-linear-gradient( withe, withe);
+    background: -moz-linear-gradient( withe, withe);
+    background: -webkit-linear-gradient( withe, withe);
+}
+
+div#previewButton {
+    text-align: right;
+    align-content: stretch;
+}
+
+div#preview {
+    padding: 3px;
+    white-space: pre-wrap;
+}
+
+div#card {
+    width: 100%;
+    height: auto 100%;
+    display: block;
+    max-width: 100%;
+    line-height: 1.5;
+    padding: 15px 15px 30px;
+    border-radius: 3px;
+    transition: box-shadow 0.5s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(rgb(248, 250, 250), (rgb(248, 250, 250)));
+    background: -o-linear-gradient(rgb(232, 230, 221), rgb(237, 237, 236));
+    background: -ms-linear-gradient(rgb(248, 250, 250), rgb(248, 250, 250));
+    background: -moz-linear-gradient(rgb(248, 250, 250), (rgb(248, 250, 250)));
+    background: -webkit-linear-gradient(rgb(248, 250, 250), (rgb(248, 250, 250)));
+}
+
+div#card_title {
+    font: bold cursive;
+    background: rgb(245, 245, 252);
+}
+
+h6#author {
+    font-style: italic normal oblique;
+    text-align: center;
+    -moz-text-size-adjust: 0%;
+    padding: 5px;
+}

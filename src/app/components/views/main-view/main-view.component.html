@@ -1,0 +1,61 @@
+<nav-root></nav-root>
+<div class="sandi">
+    <nav class="subnav" id="subnav">
+        <form class="search" id="search_form">
+            <label for="search_input">
+          <input id="search" class="search_input" [(ngModel)]="search" type="text" name="search" >
+          <button class="btn btn-sm btn-link" type="submit" (click)="searchFilter()">search</button>
+      </label>
+        </form>
+    </nav>
+    <div class="content-container">
+        <nav *ngIf="!isEnable" class="sidenav" id="navside" [clr-nav-level]="2">
+            <clr-tree>
+                Topics
+                <clr-tree-node *ngFor="let articles of getUniqueTopics() ">
+                    <a class="clr-treenode-link" routerLinkActive="active" (click)="filterArticleList(articles.topic)">{{articles.topic}}</a>
+                </clr-tree-node>
+            </clr-tree>
+        </nav>
+        <div *ngIf="!isEnable" class="content-area">
+            <div @fade class="clr-col-lg-10 clr-col-md-10 clr-col-20" *ngFor="let article of articleList">
+                <div class="card" id="shape">
+                    <div class="card-header" id="card_title">
+                        {{article.title}}
+                    </div>
+                    <div class="card-block" id="card">
+                        <div class="card-title">
+                            {{article.topic}}
+                        </div>
+                        <div class="card-text">
+                            {{cardViewTextChunck(article.text)}}
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-sm btn-link" (click)="showPreview(article.text,article.title )">show preview</button>
+                        <button class="btn btn-sm btn-link" (click)="showcompleteArticle(article)">complete article</button>
+                        <button class="btn btn-primary btn-sm" *ngIf="isLoggedIn" (click)="editArticle(article)">edit</button>
+                        <span id="author"><br> author: {{article.author}}</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div *ngIf="isEnable" class="content-area card" @slideFromR>
+
+            <div class="card-container">
+
+                <div class="card-header">
+                    {{previewTitle}}
+                </div>
+                <div id="previewButton">
+                    <button type="button" class="btn btn-sm btn-link" aria-label="home" (click)="removePreview()">X</button>
+                </div>
+                <div id="preview">{{previewText}}</div>
+                <div id="previewButton">
+                    <button type="button" class="btn btn-sm btn-link" aria-label="home" (click)="removePreview()">X</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,119 @@
+<nav-root></nav-root>
+<div class="clr-col-lg-11 clr-col-md-12 clr-col-12">
+
+    <div id="edit_header">
+        <section class="title">
+            <h3 class="welcome">Welcome to</h3>
+            SKR international
+            <h5 class="hint">SKR account website</h5>
+        </section>
+    </div>
+
+    <form clrForm clrLayout="horizontal" clrLabelSize="4">
+        <clr-control-container>
+            <span class="clr-sr-only">Tabbing through form inputs will trigger validation messages to be read aloud.</span>
+
+            <clr-input-container>
+                <label>Author</label>
+                <input clrInput type="text" [(ngModel)]="article.author" name="author" required placeholder="{{article.author}}" />
+                <clr-control-error>We need your first name for legal compliance</clr-control-error>
+            </clr-input-container>
+
+
+            <clr-input-container>
+                <label>Title</label>
+                <input clrInput type="text" [(ngModel)]="article.title" name="title" placeholder="{{article.title}}" />
+            </clr-input-container>
+
+
+            <clr-input-container>
+                <label>Topic</label>
+                <input clrInput type=" text " [(ngModel)]="article.topic " name="topic " required placeholder="{{article.topic}} " />
+                <clr-control-error>We need your last name for legal compliance</clr-control-error>
+            </clr-input-container>
+
+            <clr-input-container>
+
+                <label>Add relatinated Link (optional)</label>
+                <input clrInput #link type="text" name="link" />
+
+            </clr-input-container>
+            <div>
+                <p id="submitLink">
+                    <button class="btn btn-secondary btn-sm" [disabled]="link ===''" (click)="addLink(link)" id="bt">
+                  add link
+              </button>
+                </p>
+            </div>
+
+            <div>
+                <ul class="list-unstyled">
+                    <li *ngFor="let link of linksList; let index = index">
+                        {{link}} <button class="btn btn-link btn-sm" (click)="removeLink(index)">remove</button>
+                    </li>
+                </ul>
+                <br><br>
+            </div>
+
+            <clr-input-container>
+                <label>upload image file:</label>
+                <input clrInput type="file" (change)="onImageFileChanged($event)" accept="image/x-png,image/gif,image/jpeg" />
+            </clr-input-container>
+
+            <div *ngIf="imagePercentage | async as pct">
+                <p id="submitButton">
+                    <progress [value]="pct" max="100"></progress> {{ pct | number }}%
+                </p>
+            </div>
+            <div *ngIf="imageSnapshot | async as snap">
+                {{ snap.bytesTransferred }} of {{ snap.totalBytes }}
+            </div>
+
+            <div>
+                <ul class="list-unstyled">
+                    <li *ngFor="let imgName of listOfImageFilesNames; let index = index">
+                        {{imgName}} <button class="btn btn-link btn-danger btn-sm" (click)="removeSelectedImageFile(index, imgName)">remove</button>
+                    </li>
+                    <button *ngIf="listOfImageFilesNames.length > 0" class="btn btn-secondary btn-sm" (click)="saveImageFiles()">upload images</button>
+                </ul>
+                <br><br><br>
+            </div>
+
+            <clr-input-container>
+                <label>upload files:</label>
+                <input clrInput type="file" (change)="onFileChanged($event)" />
+            </clr-input-container>
+
+            <div *ngIf="filePercentage | async as pct">
+                <p id="submitButton">
+                    <progress [value]="pct" max="100"></progress> {{ pct | number }}%
+                </p>
+            </div>
+            <div *ngIf="fileSnapshot | async as snap">
+                {{ snap.bytesTransferred }} of {{ snap.totalBytes }}
+            </div>
+
+            <div>
+                <ul class="list-unstyled">
+                    <li *ngFor="let fileName of listOfFilesNames; let index = index">
+                        {{fileName}} <button class="btn btn-link btn-danger btn-sm" (click)="removeSelectedFile(index, fileName)">remove file</button>
+                    </li>
+                    <button *ngIf="listOfFilesNames.length > 0" class="btn btn-secondary btn-sm" (click)="saveFiles()">upload files</button>
+                </ul>
+                <br><br><br>
+            </div>
+
+            <clr-textarea-container>
+                <label>Text</label>
+                <textarea clrTextarea rows="20" cols="200" [(ngModel)]="article.text " name="text " required placeholder="{{article.text}} "></textarea>
+                <clr-control-error>We need your last name for legal compliance</clr-control-error>
+            </clr-textarea-container>
+            <p id="submitButton">
+                <button class="btn btn-primary " type="button" (click)="update()">update</button>
+            </p>
+        </clr-control-container>
+
+
+
+    </form>
+</div>

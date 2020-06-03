@@ -1,0 +1,10 @@
+.header-nav {
+    padding: 5px;
+}
+
+header#topnav {
+    background-color: rgb(77, 59, 104);
+    padding: 2px;
+    margin-bottom: 3px;
+    border-radius: 2px;
+}

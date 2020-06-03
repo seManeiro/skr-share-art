@@ -1,0 +1,52 @@
+<nav-root></nav-root>
+<div id="shape" class=" content-container " @slideFromL>
+    <div id="shape" class="clr-col-lg-12 clr-col-md-10 clr-col-20 ">
+
+        <div id="shape" class="card">
+            <div id="title" class="card-header ">
+                {{article.title}}
+            </div>
+            <div class="card-block " id="shape">
+                <div class="card-title ">
+                    {{article.topic}}
+                </div>
+                <div id="preview ">
+                    {{article.text}}
+                </div>
+            </div>
+
+
+            <div class="card-block" id="card ">
+                <div *ngFor="let img of imageList " id="card ">
+                    <img class="fit " src="{{img.url}} " title="{{img.name}} " />
+                </div>
+            </div>
+
+            <div id="urlsshape" class="card-block">
+                <span id="card ">File to download</span>
+                <div *ngFor="let a of filesList " id="card ">
+                    <a href="{{a.url}} ">{{a.name}}</a>
+                </div>
+            </div>
+
+            <div id="linksshape" class="card-block">
+                <span id="card ">Related links</span>
+                <div *ngFor="let a of linksList " id="card ">
+                    <a href="{{a}}">{{a}}</a>
+                </div>
+            </div>
+
+
+            <div id="shape" class="card-footer">
+                <button class="btn btn-primary btn-sm" *ngIf="isLoggedIn" (click)="editArticle(article)">edit</button>
+                <button class="btn btn-danger btn-sm" *ngIf="isLoggedIn" (click)="deleteArticle(article.$key)">delete</button>
+                <h6 id="author"> created by: {{article.author}}</h6>
+
+                <p id="close">
+                    <button type="button" class="btn btn-sm" aria-label="home" (click)="close()">close</button>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>

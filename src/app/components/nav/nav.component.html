@@ -1,0 +1,15 @@
+<header class="header-6" id="topnav">
+
+    <div class="header-nav">
+        <a href="" routerLink="" class="nav-link nav-text" routerLink="">SKR</a>
+        <a href="" routerLink="new_article" class="nav-link nav-text" *ngIf="isLoggedIn">+ article</a>
+        <a href="" ng-mouseover="signup" routerLink="sign_up" class="nav-link nav-text" *ngIf="isLoggedIn"> + sign_up user </a>
+
+    </div>
+    <div class="header-actions">
+        <a href="" routerLink="logout" class="active nav-link nav-text" *ngIf="isLoggedIn" (click)="authService.logout()">logout</a>
+        <a href="" routerLink="login" class="nav-link nav-text" *ngIf="!isLoggedIn">
+            <clr-icon shape="cog"></clr-icon>
+        </a>
+    </div>
+</header>

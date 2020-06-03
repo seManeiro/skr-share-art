@@ -1,0 +1,99 @@
+.sandi {
+    position: relative;
+}
+
+.sandi::after {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.04;
+    background-image: url('../../../../assets/img/sandiego.png');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+input#search {
+    border-radius: 10px;
+    border-color: rgb(197, 191, 203);
+    border-top: 0, 5mm;
+}
+
+nav#navside {
+    width: 4px;
+}
+
+nav#subnav {
+    margin-bottom: 3px;
+}
+
+textarea#note {
+    width: 100%;
+    display: block;
+    max-width: 100%;
+    line-height: 1.5;
+    padding: 15px 15px 30px;
+    border-radius: 3px;
+    font: 14px, cursive;
+    transition: box-shadow 0.5s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(withe, withe);
+    background: -o-linear-gradient(withe, withe);
+    background: -ms-linear-gradient( withe, withe);
+    background: -moz-linear-gradient( withe, withe);
+    background: -webkit-linear-gradient( withe, withe);
+}
+
+form#search_form {
+    padding: 4px;
+    padding-bottom: 4px;
+}
+
+div#previewButton {
+    text-align: right;
+    align-content: stretch;
+}
+
+div#preview {
+    padding: 3px;
+    white-space: pre-wrap;
+}
+
+div#shape {
+    border-radius: 5px;
+}
+
+div#card {
+    width: 100%;
+    height: auto 100%;
+    display: block;
+    max-width: 100%;
+    line-height: 1.5;
+    padding: 15px 15px 30px;
+    border-radius: 3px;
+    transition: box-shadow 0.5s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(rgb(248, 250, 250), (rgb(248, 250, 250)));
+    background: -o-linear-gradient(rgb(232, 230, 221), rgb(237, 237, 236));
+    background: -ms-linear-gradient(rgb(248, 250, 250), rgb(248, 250, 250));
+    background: -moz-linear-gradient(rgb(248, 250, 250), (rgb(248, 250, 250)));
+    background: -webkit-linear-gradient(rgb(248, 250, 250), (rgb(248, 250, 250)));
+}
+
+div#card_title {
+    font: bold cursive;
+    background: rgb(245, 245, 252);
+}
+
+span#author {
+    padding: 5px;
+    font: bold;
+}

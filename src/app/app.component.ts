@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from './services/auth.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-clarity-app';
+
+  isLoggedIn : boolean= false;
+
+  constructor(public authService :AuthService) {
+    this.isLoggedIn = this.authService.isLoggedIn();
+  }
+
+
+
+
 }

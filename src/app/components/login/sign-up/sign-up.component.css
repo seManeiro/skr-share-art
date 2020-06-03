@@ -1,0 +1,7 @@
+.login-wrapper {
+    background-color: whitesmoke;
+    background-image: url('../../../../assets/img/robot.png');
+    background-size: contain;
+    background-attachment: fixed;
+    background-position: right;
+}

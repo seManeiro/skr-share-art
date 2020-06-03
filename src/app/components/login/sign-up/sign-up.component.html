@@ -1,0 +1,40 @@
+<nav-root></nav-root>
+<div class="login-wrapper">
+
+
+    <form [formGroup]="registerForm" class="login">
+
+        <section class="title">
+            <h3 class="welcome">Sign up new Administrator</h3>
+            SKR international
+            <h5 class="hint">SKR account sign-up</h5>
+        </section>
+
+        <div class="login-group">
+
+
+            <clr-input-container>
+                <label class="clr-sr-only">Email</label>
+                <input required ngModel formControlName="email" type="email" name="email" clrInput placeholder="email" />
+                <div class="alert  alert-danger">
+
+                </div>
+            </clr-input-container>
+            <clr-password-container>
+                <label class="clr-sr-only">Password</label>
+                <input required ngModel formControlName="password" type="password" name="password" clrPassword placeholder="password" />
+            </clr-password-container>
+
+
+            <label class="error">{{errorMessage}}</label>
+            <label class="success">{{successMessage}}</label>
+            <button type="submit" (click)="tryRegister(registerForm.value)" class="btn btn-default">Register New Admin</button>
+        </div>
+        <div *ngIf="errorMessage" class="error active">
+            {{errorMessage}}
+        </div>
+
+
+    </form>
+
+</div>
